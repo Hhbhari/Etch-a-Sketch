@@ -6,7 +6,7 @@ h2{
 .slider-container{
     display: flex;
     justify-content: center;
-    margin: 20px;
+    gap : 30px;
 }
 
 .grid-container{
