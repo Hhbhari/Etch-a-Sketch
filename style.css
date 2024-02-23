@@ -1,0 +1,23 @@
+h2{
+    text-align: center;
+    margin: 20px;
+}
+
+.slider-container{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.grid-container{
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    margin: auto;
+    height: 700px;
+    width: 700px;
+    justify-content: center;
+    align-items: center;
+    border: solid black 2px;
+    top: 0%;
+}
