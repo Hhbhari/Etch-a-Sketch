@@ -21,3 +21,8 @@ h2{
     border: solid black 2px;
     top: 0%;
 }
+
+.grid-item{
+    box-sizing: border-box;
+    border: solid black 1px;
+}
