@@ -1,6 +1,7 @@
 const grid = document.querySelector('.grid-container');
 const slide = document.querySelector('.slider');
 const span = document.querySelector('span');
+const reset = document.querySelector('.reset');
 
 function makeGridLayout(){
     slide.oninput = ()=>{
@@ -38,5 +39,11 @@ function paintSketch(){
         });
 });
 }
+
+reset.addEventListener('click',()=>{
+    removeChildNode();
+    slide.value = '1';
+    span.innerHTML = 1;
+})
 
 makeGridLayout();
