@@ -2,7 +2,6 @@ const grid = document.querySelector('.grid-container');
 const slide = document.querySelector('.slider');
 const span = document.querySelector('span');
 
-
 function makeGridLayout(){
     slide.oninput = ()=>{
         const size = slide.value;
@@ -13,6 +12,7 @@ function makeGridLayout(){
         }
         span.innerHTML = size;
         console.log(size);
+        paintSketch();
     }
 }
 
@@ -30,5 +30,13 @@ function removeChildNode(){
     }
 }
 
+function paintSketch(){
+    const gridChilds = document.querySelectorAll('.grid-item');
+    gridChilds.forEach((gridChild) =>{
+        gridChild.addEventListener('mouseover',()=>{
+            gridChild.style.backgroundColor = 'red';
+        });
+});
+}
 
 makeGridLayout();
