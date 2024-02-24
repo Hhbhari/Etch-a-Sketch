@@ -2,6 +2,7 @@ const grid = document.querySelector('.grid-container');
 const slide = document.querySelector('.slider');
 const span = document.querySelector('span');
 const reset = document.querySelector('.reset');
+let count =1;
 
 function makeGridLayout(){
     slide.oninput = ()=>{
@@ -21,6 +22,7 @@ function makeGrid(divSize){
     const divChild = document.createElement('div');
     divChild.classList.add('grid-item');
     divChild.style.width = divChild.style.height = `${divSize}px`;
+    divChild.setAttribute('value',0);
     return divChild;
 }
 
@@ -35,9 +37,20 @@ function paintSketch(){
     const gridChilds = document.querySelectorAll('.grid-item');
     gridChilds.forEach((gridChild) =>{
         gridChild.addEventListener('mouseover',()=>{
+            let value = gridChild.getAttribute('value');
+            if(value<10){
+                changeOpacity(gridChild, value);
+            }
             gridChild.style.backgroundColor = randColor();
         });
 });
+}
+
+function changeOpacity(gridChild, value){
+    value++;
+    gridChild.style.opacity =`${value*10}%`;
+    gridChild.setAttribute('value',value);
+
 }
 
 function randColor(){
