@@ -35,9 +35,13 @@ function paintSketch(){
     const gridChilds = document.querySelectorAll('.grid-item');
     gridChilds.forEach((gridChild) =>{
         gridChild.addEventListener('mouseover',()=>{
-            gridChild.style.backgroundColor = 'red';
+            gridChild.style.backgroundColor = randColor();
         });
 });
+}
+
+function randColor(){
+    return "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6,'0').toUpperCase();
 }
 
 reset.addEventListener('click',()=>{
